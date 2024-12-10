@@ -18,11 +18,16 @@ app.use("/products", productRouter);
 // Connect to your own DB
 mongoose.connect(
   process.env.DB_URL,
-  { useNewUrlParser: true, useUnifiedTopology: true },
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
   () => {
     console.log("DB connected");
   }
 );
 
 // Listen to server
-app.listen(process.env.PORT || 5001); //Listen through port 5001
+app.listen(process.env.PORT || 5001, () => {
+  console.log("Server running on port 5001");
+}); //Listen through port 5001
