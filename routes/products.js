@@ -16,7 +16,6 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   const { name, description, price, color, stock, categories, image } =
     req.body;
-
   try {
     //create a new product from data thats been sent trough POST
     const newProduct = new Product({
